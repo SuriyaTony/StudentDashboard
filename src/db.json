@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "id": "203c",
+      "fullname": "Surya Surya",
+      "mobile": 8667602090,
+      "email": "suryatony@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "06e0",
+      "fullname": "Surya Surya",
+      "mobile": 8667602090,
+      "email": "suryatony@gmail.com",
+      "password": "sdsfsf"
+    },
+    {
+      "id": "87df",
+      "fullname": "Surya Surya",
+      "mobile": 8667602090,
+      "email": "suryatony@gmail.com",
+      "password": "sdfdsfds"
+    },
+    {
+      "id": "bd93",
+      "fullname": "dfdssf",
+      "mobile": 8667602090,
+      "email": "suryatony@gmail.com",
+      "password": "efefewf"
+    },
+    {
+      "id": "ecff",
+      "fullname": "Surya Surya",
+      "mobile": 8667602090,
+      "email": "suryatony@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "7e30",
+      "fullname": "suryatony",
+      "mobile": 8667602090,
+      "email": "suryatony@gmail.com",
+      "password": "45679"
+    },
+    {
+      "id": "5585",
+      "fullname": "prathap",
+      "mobile": 5473257234,
+      "email": "prathap@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "studentDetails": [
+    {
+      "id": "b5c1",
+      "name": "Suriya E",
+      "age": 23,
+      "section": "C",
+      "dob": "12/11/2000",
+      "gender": "Male"
+    }
+  ]
+}

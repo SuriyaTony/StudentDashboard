@@ -1,0 +1,74 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue;">Student Details</h1>
+    <div class="d-flex">
+      <button class="btn btn-success"><a href="studentDetails">Add Student</a></button>
+      <button class="btn btn-success"><a href="login">Logout</a></button>
+    </div>
+  </div>
+</nav>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Section</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+
+      <!-- If in edit mode, show input fields; otherwise, show text -->
+      <td *ngIf="editMode[student.id]">
+        <input type="text" [(ngModel)]="student.name" class="form-control" />
+      </td>
+      <td *ngIf="!editMode[student.id]">{{ student.name }}</td>
+
+      <td *ngIf="editMode[student.id]">
+        <input type="number" [(ngModel)]="student.age" class="form-control" />
+      </td>
+      <td *ngIf="!editMode[student.id]">{{ student.age }}</td>
+
+      <td *ngIf="editMode[student.id]">
+        <select [(ngModel)]="student.section" class="form-control">
+          <option value="A">Section A</option>
+          <option value="B">Section B</option>
+          <option value="C">Section C</option>
+        </select>
+      </td>
+      <td *ngIf="!editMode[student.id]">{{ student.section }}</td>
+
+      <td *ngIf="editMode[student.id]">
+        <input type="text" [(ngModel)]="student.dob" class="form-control" />
+      </td>
+      <td *ngIf="!editMode[student.id]">{{ student.dob }}</td>
+
+      <td *ngIf="editMode[student.id]">
+        <select [(ngModel)]="student.gender" class="form-control">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </td>
+      <td *ngIf="!editMode[student.id]">{{ student.gender }}</td>
+
+      <td>
+        <!-- If edit mode is active, show Save and Cancel buttons -->
+        <button *ngIf="editMode[student.id]" class="btn btn-primary" (click)="saveEditedStudent(student)">Save</button>
+        <button *ngIf="editMode[student.id]" class="btn btn-secondary" (click)="cancelEdit(student.id)">Cancel</button>
+
+        <!-- If not in edit mode, show Edit button -->
+        <button *ngIf="!editMode[student.id]" class="btn btn-warning" (click)="editStudent(student.id)">Edit</button>
+        
+        <!-- Delete button is always visible -->
+        <button class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

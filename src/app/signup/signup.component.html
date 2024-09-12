@@ -1,0 +1,35 @@
+ <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="txt-center">
+            <h1>Sign up</h1>
+            <h6>Register Yourself</h6>
+          </div>
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="fullName1" class="form-label">Full Name</label>
+              <input formControlName="fullname" type="text" class="form-control" id="fullName1">
+            </div>
+            <div class="mb-3">
+              <label for="mobileNumber1" class="form-label">Mobile Number</label>
+              <input formControlName="mobile" type="number" class="form-control" id="mobileNumber1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+            </div><br>
+            <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Save</button>
+            <button type="button" class="btn btn-primary" (click)="onClear()">Clear</button>
+          </form><br>
+          
+          <a routerLink="/login">Already Registered? Click here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
